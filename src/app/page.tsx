@@ -509,6 +509,8 @@ export default function Home() {
                       <Image
                         src={`/${value.img}`}
                         alt="Sarah J."
+                        height={5}
+                        width={5}
                         className="rounded-full"
                       />
                     </div>
