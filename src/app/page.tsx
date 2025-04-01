@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { BookOpen, Brain, Coffee, Heart, Lightbulb, Search, Star, Zap } from "lucide-react"
+import { BookOpen, Brain, Coffee, Heart, Lightbulb, Star, Zap } from "lucide-react"
 import Image from "next/image"
 import { WarpBackground } from "@/components/magicui/warp-background"
-import React , { useEffect, useState } from "react"
+import React from "react"
 
 
 
@@ -276,7 +276,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-4">Share Your Preferences</h3>
                 <p className="text-gray-400">
-                  Tell us about your reading history, favorite genres, and what you're looking for in your next book.
+                  Tell us about your reading history, favorite genres, and what you are looking for in your next book.
                 </p>
               </div>
             </motion.div>
@@ -319,7 +319,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold mb-4">Discover & Enjoy</h3>
                 <p className="text-gray-400">
-                  Get personalized recommendations and discover books you'll love, with new suggestions as you read
+                  Get personalized recommendations and discover books you will love, with new suggestions as you read
                   more.
                 </p>
               </div>
@@ -407,7 +407,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="text-gray-400">
                   <p>
-                    Reading before bed signals to your body that it's time to relax and helps establish a regular sleep
+                    Reading before bed signals to your body that it is time to relax and helps establish a regular sleep
                     pattern for more restful nights.
                   </p>
                 </CardContent>
@@ -432,7 +432,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="text-gray-400">
                   <p>
-                    Fiction readers show improved ability to understand others' mental states and emotions, enhancing
+                    Fiction readers show improved ability to understand others mental states and emotions, enhancing
                     social connections and relationships.
                   </p>
                 </CardContent>
@@ -506,7 +506,11 @@ export default function Home() {
                 <div className="flex -space-x-2">
                   {BooksFrontpage.map((value) => (
                     <div key={value.id} className="w-8 h-8 rounded-full border-2 border-[#0C1330] bg-gray-800">
-                      <img className="rounded-3xl" src={value.img} alt="" />
+                      <Image
+                        src={`/${value.img}`}
+                        alt="Sarah J."
+                        className="rounded-full"
+                      />
                     </div>
                   ))}
                 </div>
@@ -544,8 +548,8 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-gray-300 italic mb-6">
-                    "ReadAura completely changed how I discover books. The recommendations are spot-on, and I've found
-                    authors I never would have discovered otherwise and i would really suggest you to chechout Readaura! "
+                    ReadAura completely changed how I discover books. The recommendations are spot-on, and I have found
+                    authors I never would have discovered otherwise and i would really suggest you to chechout Readaura! 
                   </p>
                   <div className="flex items-center">
                     <div className="rounded-full bg-purple-500/20 p-1">
@@ -582,8 +586,8 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-gray-300 italic mb-6">
-                    "I was stuck in a reading rut until I found ReadAura. The personalized recommendations reignited my
-                    passion for reading. Now I can't wait to dive into my next book!"
+                    I was stuck in a reading rut until I found ReadAura. The personalized recommendations reignited my
+                    passion for reading. Now I can not wait to dive into my next book!
                   </p>
                   <div className="flex items-center">
                     <div className="rounded-full bg-teal-500/20 p-1">
@@ -623,8 +627,8 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-gray-300 italic mb-6">
-                    "The community aspect of ReadAura is what sets it apart. I love discussing books with like-minded
-                    readers and getting recommendations from real people."
+                    The community aspect of ReadAura is what sets it apart. I love discussing books with like-minded
+                    readers and getting recommendations from real people.
                   </p>
                   <div className="flex items-center">
                     <div className="rounded-full bg-green-500/20 p-1">

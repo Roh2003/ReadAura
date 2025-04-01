@@ -100,7 +100,7 @@ export default function Page() {
         <SignedIn>
             <div className="flex flex-col items-center gap-8 p-8">
                 <h1 className="font-bold text-3xl text-center max-w-3xl">
-                    Find Your Next Perfect Read – Tell Us What You Love, and We'll Recommend the Best Books for You!
+                    Find Your Next Perfect Read Tell Us What You Love, and We will Recommend the Best Books for You!
                 </h1>
 
                 <div className="w-full max-w-2xl">

@@ -4,9 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ModeToggle } from "@/app/(app)/component/mode-toggle"
-import { useAuth, useClerk, UserProfile } from "@clerk/clerk-react"
-import { useRouter } from "next/navigation";
-import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton, SignOutButton } from "@clerk/nextjs"
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 
 
 export default function Header() {
@@ -16,9 +14,6 @@ export default function Header() {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
-  const { isSignedIn } = useAuth();
-  const { signOut } = useClerk();
-  const router = useRouter();
 
   return (
     <header className="bg-primary text-primary-foreground">

@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { SignUp } from "@clerk/nextjs"
 import { BookOpen, BookText, BookMarked, Quote, Sparkles } from "lucide-react"
 import { Inter, DM_Serif_Display, Merriweather } from "next/font/google"
-import { BoxesCore } from "@/components/ui/background-boxes"
+
 
 // Font setup
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })

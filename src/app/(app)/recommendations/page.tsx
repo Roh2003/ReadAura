@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 import { Star , Loader } from "lucide-react"
 import { SignedIn } from "@clerk/nextjs"
-import { toast , ToastContainer} from "react-toastify"
 
 // const books = [
 //   { id: 1, title: "The Midnight Library", author: "Matt Haig", cover: "/placeholder.svg" },
@@ -29,7 +28,7 @@ export default function Recommendations() {
 
   const [books, setBooks] = useState<Book[]>([]); // State to store fetched books
   const [loading, setLoading] = useState(true); // Loading state
-  const [error, setError] = useState(null); 
+  const [error ] = useState(null); 
   
   useEffect(() => {
     const fetchPopularBooks = async () => {
