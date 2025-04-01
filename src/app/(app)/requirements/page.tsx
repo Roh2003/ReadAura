@@ -19,7 +19,7 @@ interface BookPreferencesFormProps {
 
 const BookPreferencesForm: React.FC<BookPreferencesFormProps> = ({ selectedGenres, handleGenreChange }) => {
 
-    const genres = ["Fiction", "AutoBioGraphy", "BioGraphy", "Poetry", "Comedy", "Personal_Growth",     "Relationship", "Religion", "Technology"];
+    const genres = ["Fiction", "AutoBioGraphy", "BioGraphy", "Poetry", "Comedy", "Personal_Growth","Relationship", "Religion", "Technology"];
     
 
     return (
@@ -32,7 +32,7 @@ const BookPreferencesForm: React.FC<BookPreferencesFormProps> = ({ selectedGenre
                             {selectedGenres.length > 0 ? selectedGenres.join(", ") : "Select Genres"}
                         </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent>k. 
+                    <DropdownMenuContent>
                         {genres.map((genre) => (
                             <DropdownMenuCheckboxItem
                                 key={genre}
@@ -194,7 +194,7 @@ export default function Page() {
                         {/* Minimum Rating */}
                         <div className="space-y-2">
                             <label className="block font-medium">Minimum Rating</label>
-                            <input type="number" placeholder="eg.,8.2" value={minRating} 
+                            <input type="number" placeholder="   Choose minimum rating out of 10" className="text-sm font-arial w-full bg-slate-950 border-2 h-10 rounded-sm" value={minRating} 
                             onChange={(e) => setMinRating(e.target.value)} />
                         </div>
                         {/* language preference */}
@@ -217,13 +217,13 @@ export default function Page() {
                     <Card key={book.BOOK_TITLE}>
                         <CardHeader>
                             <Image
+                                priority={true}
+                                loading="eager"
                                 src={book.F_PAGE}
                                 alt={book.BOOK_TITLE}
                                 width={200}
                                 height={300}
                                 className="w-full h-full object-contain"
-                                priority={true}
-                                loading="eager"
                             />
                         </CardHeader>
                         <CardContent className="flex flex-col items-start gap-2">
