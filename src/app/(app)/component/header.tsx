@@ -9,10 +9,6 @@ import { useRouter } from "next/navigation";
 import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton, SignOutButton } from "@clerk/nextjs"
 
 
-
-
-
-
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -31,9 +27,20 @@ export default function Header() {
           <Link href="/" className="text-2xl font-bold">
             ReadAura
           </Link>
+          <div className="sm:hidden absolute right-12 ">
+          <SignedOut>
+            <SignInButton forceRedirectUrl="/dashboard">
+              <Button variant="outline" className="text-white relative ">Login</Button>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          </div>
+
 
           {/* Mobile Menu Button */}
-          <button
+        <button
             className="sm:hidden text-2xl focus:outline-none"
             onClick={toggleMobileMenu}
           >
@@ -49,19 +56,19 @@ export default function Header() {
                   <Link href="/dashboard" className="hover:text-secondary">Dashboard</Link>
                 </li>
                 <li>
-                  <Link href="/recommendations" className="hover:text-secondary">Recommendations</Link>
+                  <Link href="/recommendations" className="hover:text-secondary">Popular</Link>
                 </li>
               </ul>
             </nav>
             <ModeToggle />
-            {isSignedIn ? (
-                <Button variant="secondary" onClick={() => {
-                  signOut()
-                  toggleMobileMenu()
-                }}>Sign Out</Button>
-              ) : (
-                <Button variant="secondary"><Link href="/sign-in">Sign In</Link></Button>
-              )}
+            <SignedOut>
+                <SignInButton forceRedirectUrl="/dashboard">
+                  <Button variant="outline" className="text-white">Login</Button>
+                </SignInButton>
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+             </SignedIn>
           </div>
         </div>
 
@@ -103,20 +110,13 @@ export default function Header() {
                     className="block text-lg hover:text-secondary"
                     onClick={toggleMobileMenu}
                   >
-                    Recommendations
+                    Popular
                   </Link>
                 </li>
               </ul>
             <div className="flex flex-col space-y-4">
               <ModeToggle />
-              <SignedOut>
-                <SignInButton forceRedirectUrl="/dashboard">
-                  <Button variant="outline">Login</Button>
-                </SignInButton>
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-             </SignedIn>
+              
 
             </div>
             </nav>

@@ -8,17 +8,21 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BookOpen, Brain, Coffee, Heart, Lightbulb, Search, Star, Zap } from "lucide-react"
 import Image from "next/image"
 import { WarpBackground } from "@/components/magicui/warp-background"
+import React , { useEffect, useState } from "react"
+
+
 
 export default function Home() {
 
   const BooksFrontpage = [
-    {id:1,title:"maharaj",img:"maharaj.jpg"},
-    {id:2,title:"maharaj",img:"maharaj.jpg"},
-    {id:3,title:"maharaj",img:"maharaj.jpg"},
-    {id:4,title:"maharaj",img:"maharaj.jpg"},
-    {id:5,title:"maharaj",img:"maharaj.jpg"},
-    {id:6,title:"maharaj",img:"maharaj.jpg"},
+    {id:1,title:"Maharaj BioGrahy",img:"maharaj.jpg"},
+    {id:2,title:"Rich Dad Poor Dad",img:"rich_dad_poor_dad.png"},
+    {id:3,title:"One Indian Girl",img:"one_indian_girl.png"},
+    {id:4,title:"Praying to get Results",img:"praying.png"},
+    {id:5,title:"100 Ways to Motivate yourself",img:"motivate.png"},
+    {id:6,title:"Waiting And Daiting",img:"waiting.png"},
   ]
+
   return (
     <div className="min-h-screen bg-[#050A1A] text-white overflow-hidden">
       {/* Header/Navigation */}
@@ -174,39 +178,43 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {BooksFrontpage.map((book) => (
-              <motion.div
-                key={book.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                // transition={{ duration: 0.5, delay: book * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, transition: { duration: 0.2 } }}
-                className="group"
-              >
-                <div className="relative aspect-[2/3] overflow-hidden rounded-lg shadow-lg">
-                  <Image
-                    src={`/${book.img}`}
-                    alt={`Book ${book}`}
-                    width={200}
-                    height={300}
-                    className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-3">
-                      <div className="flex items-center mb-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-3 w-3 fill-yellow-500 text-yellow-500" />
-                        ))}
-                      </div>
-                      <p className="text-sm font-medium">Book Title {book.title}</p>
-                    </div>
-                  </div>
+          
+    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      {BooksFrontpage.map((book) => (
+        <motion.div
+          key={book.id} // Use a unique key
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          whileHover={{ y: -10, transition: { duration: 0.2 } }}
+          className="group"
+        >
+          <div className="relative aspect-[2/3] overflow-hidden rounded-lg shadow-lg">
+            <Image
+              src={`/${book.img}`} // Use fetched image link
+              alt={book.title
+              }
+              width={200}
+              height={300}
+              className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+              <div className="p-3">
+                <div className="flex items-center mb-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-3 w-3 fill-yellow-500 text-yellow-500" />
+                  ))}
                 </div>
-              </motion.div>
-            ))}
+                <p className="text-sm font-medium">{book.title}</p>
+              </div>
+            </div>
           </div>
+        </motion.div>
+      ))}
+    </div>
+  
+
+
 
           <div className="mt-12 text-center">
             <Button variant="outline" className="border-purple-500 text-purple-400 hover:bg-purple-400 hover:text-slate-900 hover:border-slate-950">
@@ -340,7 +348,7 @@ export default function Home() {
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
             >
               <Card className="h-full bg-[#0A1128] border-gray-800 overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full -mr-16 -mt-16"></div>
+                <div className="absolute right-0 w-32 h-32 bg-purple-500/10 rounded-full  -mt-16"></div>
                 <CardHeader>
                   <div className="bg-purple-500/10 p-3 rounded-full w-fit mb-4">
                     <Brain className="h-6 w-6 text-purple-400" />
@@ -365,7 +373,7 @@ export default function Home() {
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
             >
               <Card className="h-full bg-[#0A1128] border-gray-800 overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/10 rounded-full -mr-16 -mt-16"></div>
+                <div className="absolute  right-0 w-32 h-32 bg-teal-500/10 rounded-full  -mt-16"></div>
                 <CardHeader>
                   <div className="bg-teal-500/10 p-3 rounded-full w-fit mb-4">
                     <Heart className="h-6 w-6 text-teal-400" />
@@ -390,7 +398,7 @@ export default function Home() {
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
             >
               <Card className="h-full bg-[#0A1128] border-gray-800 overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full -mr-16 -mt-16"></div>
+                <div className="absolute  right-0 w-32 h-32 bg-green-500/10 rounded-full  -mt-16"></div>
                 <CardHeader>
                   <div className="bg-green-500/10 p-3 rounded-full w-fit mb-4">
                     <Coffee className="h-6 w-6 text-green-400" />
@@ -415,7 +423,7 @@ export default function Home() {
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
             >
               <Card className="h-full bg-[#0A1128] border-gray-800 overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full -mr-16 -mt-16"></div>
+                <div className="absolute right-0 w-32 h-32 bg-orange-500/10 rounded-full  -mt-16"></div>
                 <CardHeader>
                   <div className="bg-orange-500/10 p-3 rounded-full w-fit mb-4">
                     <Zap className="h-6 w-6 text-orange-400" />
@@ -496,8 +504,10 @@ export default function Home() {
 
               <div className="mt-6 flex items-center justify-center gap-2">
                 <div className="flex -space-x-2">
-                  {[...Array(4)].map((_, i) => (
-                    <div key={i} className="w-8 h-8 rounded-full border-2 border-[#0C1330] bg-gray-800"></div>
+                  {BooksFrontpage.map((value) => (
+                    <div key={value.id} className="w-8 h-8 rounded-full border-2 border-[#0C1330] bg-gray-800">
+                      <img className="rounded-3xl" src={value.img} alt="" />
+                    </div>
                   ))}
                 </div>
                 <p className="text-sm text-gray-400">Join 10,000+ book lovers</p>
@@ -535,12 +545,12 @@ export default function Home() {
                   </div>
                   <p className="text-gray-300 italic mb-6">
                     "ReadAura completely changed how I discover books. The recommendations are spot-on, and I've found
-                    authors I never would have discovered otherwise!"
+                    authors I never would have discovered otherwise and i would really suggest you to chechout Readaura! "
                   </p>
                   <div className="flex items-center">
                     <div className="rounded-full bg-purple-500/20 p-1">
                       <Image
-                        src="/placeholder.svg?height=50&width=50"
+                        src="/roh.jpg"
                         alt="Sarah J."
                         width={40}
                         height={40}
@@ -548,7 +558,7 @@ export default function Home() {
                       />
                     </div>
                     <div className="ml-3">
-                      <p className="font-medium">Sarah J.</p>
+                      <p className="font-medium">Rohit S.</p>
                       <p className="text-sm text-gray-400">Book Enthusiast</p>
                     </div>
                   </div>
@@ -578,7 +588,7 @@ export default function Home() {
                   <div className="flex items-center">
                     <div className="rounded-full bg-teal-500/20 p-1">
                       <Image
-                        src="/placeholder.svg?height=50&width=50"
+                        src="/chi.jpg"
                         alt="Michael T."
                         width={40}
                         height={40}
@@ -586,7 +596,7 @@ export default function Home() {
                       />
                     </div>
                     <div className="ml-3">
-                      <p className="font-medium">Michael T.</p>
+                      <p className="font-medium">Chinmai P.</p>
                       <p className="text-sm text-gray-400">Fiction Lover</p>
                     </div>
                   </div>
@@ -619,7 +629,7 @@ export default function Home() {
                   <div className="flex items-center">
                     <div className="rounded-full bg-green-500/20 p-1">
                       <Image
-                        src="/placeholder.svg?height=50&width=50"
+                        src="/pra.jpg"
                         alt="Elena R."
                         width={40}
                         height={40}
@@ -627,8 +637,8 @@ export default function Home() {
                       />
                     </div>
                     <div className="ml-3">
-                      <p className="font-medium">Elena R.</p>
-                      <p className="text-sm text-gray-400">Avid Reader</p>
+                      <p className="font-medium">Pratish B.</p>
+                      <p className="text-sm text-gray-400">Relationship Reader</p>
                     </div>
                   </div>
                 </CardContent>
