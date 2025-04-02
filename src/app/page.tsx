@@ -67,11 +67,11 @@ export default function Home() {
         beamDuration={3}
         perspective={100}>
       
-      <section className="relative py-20 md:py-32 overflow-hidden">
+      <section className="relative py-20 md:py-32">
         {/* Grid Background */}
         <div className="absolute inset-0 z-0">
           <div
-            className="absolute inset-0"
+            className="absolute inset-0"  
             style={{
               backgroundImage: `linear-gradient(to bottom, rgba(5, 10, 26, 0.8), rgba(5, 10, 26, 0.95)), url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='50' height='50' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 50 0 L 0 0 0 50' fill='none' stroke='%23113' strokeWidth='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)' /%3E%3C/svg%3E")`,
               backgroundSize: "cover",
@@ -136,12 +136,12 @@ export default function Home() {
         />
 
         {/* Content */}
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+        <div className="container mx-auto  px-4 relative z-10">
+          <div className="max-w-6xl mx-auto text-center ">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <h1 className="text-5xl md:text-7xl font-bold mb-6">
                 Welcome to{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600 ">
                   ReadAura
                 </span>
               </h1>
