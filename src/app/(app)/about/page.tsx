@@ -199,7 +199,7 @@ export default function About() {
             >
               <motion.div
                 className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 bg-slate-800"
-                whileHover={{ scale: 1.5, borderRadius: "50%" }}
+                whileHover={{ scale: 1.2, borderRadius: "50%" }}
                 transition={{ duration: 0.3 }}
               >
                 <Image
@@ -224,7 +224,7 @@ export default function About() {
             >
               <motion.div
                 className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 bg-slate-800"
-                whileHover={{ scale: 1.1, borderRadius: "40%" }}
+                whileHover={{ scale: 1.2, borderRadius: "50%" }}
                 transition={{ duration: 0.3 }}
               >
                 <Image
@@ -249,7 +249,7 @@ export default function About() {
             >
               <motion.div
                 className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 bg-slate-800"
-                whileHover={{ scale: 1.1, borderRadius: "40%" }}
+                whileHover={{ scale: 1.2, borderRadius: "50%" }}
                 transition={{ duration: 0.3 }}
               >
                 <Image
@@ -274,7 +274,7 @@ export default function About() {
             >
               <motion.div
                 className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 bg-slate-800"
-                whileHover={{ scale: 1.1, borderRadius: "40%" }}
+                whileHover={{ scale: 1.2, borderRadius: "50%" }}
                 transition={{ duration: 0.3 }}
               >
                 <Image

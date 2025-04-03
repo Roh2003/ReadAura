@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { SignIn } from "@clerk/nextjs"
 import { BookOpen, BookText, BookMarked, Quote, Sparkles } from "lucide-react"
 import { Inter, DM_Serif_Display, Merriweather } from "next/font/google"
+import { toast, ToastContainer } from "react-toastify"
 
 // Font setup
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -27,6 +28,9 @@ const bookQuotes = [
   "There is no friend as loyal as a book.",
   "A book is a dream that you hold in your hand.",
 ]
+
+
+
 
 // Book animation variants
 const bookVariants = {
@@ -91,6 +95,10 @@ export default function SignInPage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [randomQuote, setRandomQuote] = useState("")
 
+  useEffect(() => {
+    toast.warn("🚀NASA just called...They said you need to log in before launching!😂")
+  }, [])
+
   // Track mouse position for parallax effect
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -125,6 +133,18 @@ export default function SignInPage() {
     <div
       className={`flex flex-col lg:flex-row min-h-screen w-full overflow-hidden ${inter.variable} ${dmSerif.variable} ${merriweather.variable} font-sans`}
     >
+      <ToastContainer
+      
+      position="top-center"
+      autoClose={4000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      theme="light"
+      
+      />
+
       {/* Left Section with animations */}
       <div className="relative w-full lg:w-1/2 bg-black overflow-hidden min-h-screen">
         {/* Animated grid background */}

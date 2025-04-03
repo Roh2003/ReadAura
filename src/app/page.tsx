@@ -5,11 +5,12 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { BookOpen, Brain, Coffee, Heart, Lightbulb, Star, Zap } from "lucide-react"
+import { BookOpen, Brain, Coffee, Heart, Lightbulb, Star, Zap , PlusIcon } from "lucide-react"
 import Image from "next/image"
 import { WarpBackground } from "@/components/magicui/warp-background"
 import React from "react"
 import {toast , ToastContainer} from "react-toastify"
+import ReviewMarquee from "@/components/marquee"
 
 
 
@@ -152,11 +153,11 @@ export default function Home() {
           }}
         />
 
-        {/* Content */}
-        <div className="container mx-auto  px-4 relative z-10">
-          <div className="max-w-6xl mx-auto text-center ">
+        {/* Content */} 
+        <div className="container mx-auto relative z-10">
+          <div className="max-w-6xl pr-5 text-center  ">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 ">
                 Welcome to{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600 ">
                   ReadAura
@@ -550,128 +551,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Review 1 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10, transition: { duration: 0.2 } }}
-            >
-              <Card className="h-full bg-[#0A1128] border-gray-800">
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-500 text-yellow-500" />
-                    ))}
-                  </div>
-                  <p className="text-gray-300 italic mb-6">
-                    ReadAura completely changed how I discover books. The recommendations are spot-on, and I have found
-                    authors I never would have discovered otherwise and i would really suggest you to chechout Readaura! 
-                  </p>
-                  <div className="flex items-center">
-                    <div className="rounded-full bg-purple-500/20 p-1">
-                      <Image
-                        src="/roh.jpg"
-                        alt="Sarah J."
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                      />
-                    </div>
-                    <div className="ml-3">
-                      <p className="font-medium">Rohit S.</p>
-                      <p className="text-sm text-gray-400">Book Enthusiast</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
+          <ReviewMarquee />
 
-            {/* Review 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10, transition: { duration: 0.2 } }}
-            >
-              <Card className="h-full bg-[#0A1128] border-gray-800">
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-500 text-yellow-500" />
-                    ))}
-                  </div>
-                  <p className="text-gray-300 italic mb-6">
-                    I was stuck in a reading rut until I found ReadAura. The personalized recommendations reignited my
-                    passion for reading. Now I can not wait to dive into my next book!
-                  </p>
-                  <div className="flex items-center">
-                    <div className="rounded-full bg-teal-500/20 p-1">
-                      <Image
-                        src="/chi.jpg"
-                        alt="Michael T."
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                      />
-                    </div>
-                    <div className="ml-3">
-                      <p className="font-medium">Chinmai P.</p>
-                      <p className="text-sm text-gray-400">Fiction Lover</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Review 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10, transition: { duration: 0.2 } }}
-            >
-              <Card className="h-full bg-[#0A1128] border-gray-800">
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
-                    {[...Array(4)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-500 text-yellow-500" />
-                    ))}
-                    {[...Array(1)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-gray-600" />
-                    ))}
-                  </div>
-                  <p className="text-gray-300 italic mb-6">
-                    The community aspect of ReadAura is what sets it apart. I love discussing books with like-minded
-                    readers and getting recommendations from real people.
-                  </p>
-                  <div className="flex items-center">
-                    <div className="rounded-full bg-green-500/20 p-1">
-                      <Image
-                        src="/pra.jpg"
-                        alt="Elena R."
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                      />
-                    </div>
-                    <div className="ml-3">
-                      <p className="font-medium">Pratish B.</p>
-                      <p className="text-sm text-gray-400">Relationship Reader</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-
-          <div className="mt-12 text-center">
+          <div className=" text-center">
             <Button variant="outline" className="border-purple-500 text-purple-400 hover:bg-purple-400 hover:text-slate-900 hover:border-slate-950">
-              Read More Reviews
+              <PlusIcon/>Add Review
             </Button>
           </div>
         </div>
