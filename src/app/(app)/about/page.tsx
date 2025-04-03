@@ -211,7 +211,7 @@ export default function About() {
                 />
               </motion.div>
               <h3 className="text-xl font-semibold text-white mb-1">Rohit Saundalkar</h3>
-              <p className="text-purple-400 mb-3">Founder & Lead Developer</p>
+              <p className="text-purple-400 mb-3">Lead Project Developer</p>
               <p className="text-slate-400 text-sm">
               Specializes in strategic leadership, driving innovation, and overseeing cross-functional teams to deliver high-impact solutions while fostering collaboration, efficiency, and growth.
               </p>
@@ -228,7 +228,7 @@ export default function About() {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/placeholder.svg?height=96&width=96"
+                  src="/pratish.jpg"
                   alt="Developer profile"
                   width={96}
                   height={96}
@@ -253,14 +253,14 @@ export default function About() {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/placeholder.svg?height=96&width=96"
+                  src="/chin.jpg"
                   alt="Developer profile"
                   width={96}
                   height={96}
                   className="w-full h-full object-cover"
                 />
               </motion.div>
-              <h3 className="text-xl font-semibold text-white mb-1">hinmai Patil</h3>
+              <h3 className="text-xl font-semibold text-white mb-1">Chinmai Patil</h3>
               <p className="text-purple-400 mb-3">UI/UX Designer</p>
               <p className="text-slate-400 text-sm">
               Specializes in creating user-centric designs, crafting visually appealing, intuitive, and seamless digital experiences that enhance user engagement and accessibility..
@@ -278,7 +278,7 @@ export default function About() {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/placeholder.svg?height=96&width=96"
+                  src="/ritika.jpg"
                   alt="Developer profile"
                   width={96}
                   height={96}
