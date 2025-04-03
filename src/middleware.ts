@@ -6,6 +6,9 @@ const isPublicRoute = createRouteMatcher([
     "/sign-up",
     "/",
     "/component",
+    "/about",
+    "/how-it-works",
+    
 ]);
 
 const isPublicApiRoute = createRouteMatcher([

@@ -9,6 +9,7 @@ import { BookOpen, Brain, Coffee, Heart, Lightbulb, Star, Zap } from "lucide-rea
 import Image from "next/image"
 import { WarpBackground } from "@/components/magicui/warp-background"
 import React from "react"
+import {toast , ToastContainer} from "react-toastify"
 
 
 
@@ -23,8 +24,24 @@ export default function Home() {
     {id:6,title:"Waiting And Daiting",img:"waiting.png"},
   ]
 
+  const newsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Handle form submission logic here
+    toast.success("Subscribed successfully!")
+  }
+
   return (
     <div className="min-h-screen bg-[#050A1A] text-white overflow-hidden">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover />
       {/* Header/Navigation */}
       {/* <header className="border-b border-gray-800 bg-[#0A0F25]/80 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -157,7 +174,7 @@ export default function Home() {
                   variant="outline"
                   className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg"
                 >
-                  <Link href="/about">Learn More</Link>
+                  <Link href="/how-it-works">Learn More</Link>
                 </Button>
               </div>
             </motion.div>
@@ -470,7 +487,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={newsletterSubmit}>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
                     <Input
@@ -509,8 +526,8 @@ export default function Home() {
                       <Image
                         src={`/${value.img}`}
                         alt="Sarah J."
-                        height={5}
-                        width={5}
+                        height={20}
+                        width={30}
                         className="rounded-full"
                       />
                     </div>

@@ -4,10 +4,10 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ModeToggle } from "@/app/(app)/component/mode-toggle"
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
+import { SignInButton, SignOutButton , SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 
 
-export default function Header() {
+export default function Header() { 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const toggleMobileMenu = () => {
@@ -51,12 +51,15 @@ export default function Header() {
                   <Link href="/dashboard" className="hover:text-secondary">Dashboard</Link>
                 </li>
                 <li>
-                  <Link href="/recommendations" className="hover:text-secondary">Popular</Link>
+                  <Link href="/recommendations" className="hover:text-secondary">Top Picks</Link>
+                </li>
+                <li>
+                  <Link href="/about" className="hover:text-secondary">About</Link>
                 </li>
               </ul>
             </nav>
             <ModeToggle />
-            <SignedOut>
+              <SignedOut>
                 <SignInButton forceRedirectUrl="/dashboard">
                   <Button variant="outline" className="text-white">Login</Button>
                 </SignInButton>
@@ -108,12 +111,33 @@ export default function Header() {
                     Popular
                   </Link>
                 </li>
+                <li>
+                  <Link 
+                    href="/about" 
+                    className="block text-lg hover:text-secondary"
+                    onClick={toggleMobileMenu}
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/how-it-works" 
+                    className="block text-lg hover:text-secondary"
+                    onClick={toggleMobileMenu}
+                  >
+                    How it works
+                  </Link>
+                </li>
               </ul>
             <div className="flex flex-col space-y-4">
               <ModeToggle />
-              
-
             </div>
+            <SignedIn>
+            <SignOutButton>
+                  <Button variant="outline" className="text-white" onClick={toggleMobileMenu}>log Out</Button>
+            </SignOutButton>
+            </SignedIn>
             </nav>
             
           </div>
