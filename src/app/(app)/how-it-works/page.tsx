@@ -25,10 +25,10 @@ export default function HowItWorks() {
     },
   }
 
-  const fadeIn = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.8 } },
-  }
+  // const fadeIn = {
+  //   hidden: { opacity: 0 },
+  //   visible: { opacity: 1, transition: { duration: 0.8 } },
+  // }
 
   return (
     <main className="min-h-screen bg-slate-950 text-slate-200 py-12 px-4 md:px-8">
@@ -60,7 +60,7 @@ export default function HowItWorks() {
               </motion.div>
               <h2 className="text-3xl font-bold text-white">Thank You for Visiting ReadAura</h2>
               <p className="text-lg text-slate-300 max-w-2xl">
-                We're thrilled that you're here! Your journey to discovering amazing books begins now. Our team has
+                We are thrilled that you are here! Your journey to discovering amazing books begins now. Our team has
                 crafted this platform with love and dedication to help you find stories that resonate with your soul.
               </p>
               <motion.div
@@ -89,7 +89,7 @@ export default function HowItWorks() {
                 <h2 className="text-3xl font-bold text-white">Personalized Book Recommendations</h2>
               </div>
               <p className="text-slate-400">
-                Tell us what you're looking for, and we'll find the perfect books for you. Our advanced recommendation
+                Tell us what you are looking for, and we will find the perfect books for you. Our advanced recommendation
                 system considers:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -213,7 +213,7 @@ export default function HowItWorks() {
                 <span className="text-xl font-bold text-purple-400">1</span>
               </motion.div>
               <h3 className="text-xl font-semibold text-white mb-2">Set Your Preferences</h3>
-              <p className="text-slate-400">Tell us what you're looking for in your next great read</p>
+              <p className="text-slate-400">Tell us what you are looking for in your next great read</p>
             </motion.div>
             <motion.div
               className="bg-slate-900/50 p-6 rounded-lg border border-slate-800 text-center"

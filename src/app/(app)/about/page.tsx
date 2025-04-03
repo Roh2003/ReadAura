@@ -74,7 +74,7 @@ export default function About() {
                 books that resonate with their unique interests, preferences, and reading habits.
               </p>
               <p className="text-slate-400">
-                We're passionate about literature in all its forms and are dedicated to helping you discover stories
+                We are passionate about literature in all its forms and are dedicated to helping you discover stories
                 that will captivate, inspire, and transform you.
               </p>
               <motion.div
@@ -356,7 +356,7 @@ export default function About() {
             >
               <h3 className="text-xl font-semibold text-white mb-3">Community Building</h3>
               <p className="text-slate-400">
-                We're creating a community of readers who share recommendations, insights, and a passion for great
+                We are creating a community of readers who share recommendations, insights, and a passion for great
                 books.
               </p>
             </motion.div>
@@ -375,7 +375,7 @@ export default function About() {
             Get in Touch
           </motion.h2>
           <motion.p className="text-slate-400 text-center max-w-3xl mx-auto" variants={itemVariants}>
-            Have questions, suggestions, or just want to say hello? We'd love to hear from you!
+            Have questions, suggestions, or just want to say hello? We would love to hear from you!
           </motion.p>
           <motion.div
             className="bg-slate-900/50 p-8 rounded-lg border border-slate-800 max-w-2xl mx-auto"
