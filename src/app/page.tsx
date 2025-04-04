@@ -8,10 +8,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BookOpen, Brain, Coffee, Heart, Lightbulb, Star, Zap , PlusIcon } from "lucide-react"
 import Image from "next/image"
 import { WarpBackground } from "@/components/magicui/warp-background"
-import React from "react"
+import React, { useState } from "react"
 import {toast , ToastContainer} from "react-toastify"
 import ReviewMarquee from "@/components/marquee"
+import FeedbackDialog from "@/components/FeedbackDialog"
 
+type Review = {
+  name: string;
+  username: string;
+  body: string;
+  img: string;
+  rating: string;
+};
 
 
 export default function Home() {
@@ -24,6 +32,42 @@ export default function Home() {
     {id:5,title:"100 Ways to Motivate yourself",img:"motivate.png"},
     {id:6,title:"Waiting And Daiting",img:"waiting.png"},
   ]
+
+  const [reviews, setReviews] = useState([
+    { 
+      name: "Rohit S.", 
+      username: "@rohit", 
+      body: "ReadAura is a game-changer! The recommendations are spot-on, making book discovery effortless. Highly recommended!", 
+      img: "/roh.jpg", 
+      rating: "⭐⭐⭐⭐⭐" 
+    },
+  
+    { 
+        name: "Chinmai P.", 
+        username: "@chinmai", 
+        body: "I was stuck in a reading slump, but ReadAura brought back my love for books. Every recommendation is a gem!", 
+        img: "/chi.jpg", 
+        rating: "⭐⭐⭐⭐⭐" 
+    },
+    { 
+      name: "Jenny", 
+      username: "@jenny", 
+      body: "Amazing experience! ReadAura makes discovering books effortless and fun.", 
+      img: "https://avatar.vercel.sh/jenny", 
+      rating: "⭐⭐⭐⭐⭐" 
+    },
+    { 
+        name: "Pratish B.", 
+        username: "@pratish", 
+        body: "The community aspect makes ReadAura amazing! Real people, real recommendations—feels like a book club!", 
+        img: "/pra.jpg", 
+        rating: "⭐⭐⭐⭐⭐" 
+      }
+  ]);
+
+  const addReview = (newReview: Review) => {
+    setReviews((prevReviews) => [...prevReviews, newReview]);
+  };
 
   const newsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -551,15 +595,15 @@ export default function Home() {
             </p>
           </div>
 
-          <ReviewMarquee />
+          <ReviewMarquee reviews={reviews}  />
 
-          <div className=" text-center">
-            <Button variant="outline" className="border-purple-500 text-purple-400 hover:bg-purple-400 hover:text-slate-900 hover:border-slate-950">
-              <PlusIcon/>Add Review
-            </Button>
+          {/* ✅ Button and Dialog are handled inside this */}
+          <div className="text-center">
+            <FeedbackDialog onAddReview={addReview} />
           </div>
         </div>
       </section>
+
 
       {/* Call to Action */}
       <section className="py-20 relative overflow-hidden">
