@@ -16,12 +16,17 @@ const isPublicApiRoute = createRouteMatcher([
 ]);
 
 export default clerkMiddleware(async(auth, req) => {
-    const { userId } = await auth();
+    const { userId , sessionClaims } = await auth();
     const currentUrl = new URL(req.url);
     const isApiRequest = currentUrl.pathname.startsWith("/api");
+    const role = sessionClaims?.metadata?.role
 
     // 🔹 Allow access to all private routes if the user is logged in
     if (userId) {
+
+        if (currentUrl.pathname === "/" && role === "admin") {
+            return NextResponse.redirect(new URL("/admin", req.url));
+        }  
         return NextResponse.next();  // ✅ Allow access to private pages
     }
 
@@ -37,7 +42,7 @@ export default clerkMiddleware(async(auth, req) => {
             return NextResponse.redirect(new URL("/sign-in", req.url));
         }
         if (userId && (currentUrl.pathname === "/sign-in" || currentUrl.pathname === "/sign-up")) {
-            return NextResponse.redirect(new URL("/dashboard", req.url));
+            return NextResponse.redirect(new URL("/", req.url));
         }
         
     }

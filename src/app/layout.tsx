@@ -25,6 +25,7 @@ export default function RootLayout({
 
   const isAuthPage =
     pathname === "/sign-in" ||
+    pathname === "/sign-in/factor-one" ||
     pathname === "/sign-up" ||
     pathname === "/sign-up/verify-email-address"; // Check if auth page
 
