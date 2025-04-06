@@ -1,20 +1,20 @@
 "use client";
 
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+// import {
+//   AlertDialog,
+//   AlertDialogAction,
+//   AlertDialogCancel,
+//   AlertDialogContent,
+//   AlertDialogDescription,
+//   AlertDialogFooter,
+//   AlertDialogHeader,
+//   AlertDialogTitle,
+//   AlertDialogTrigger,
+// } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+// import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
-import { PlusIcon } from "lucide-react";
+// import { PlusIcon } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import { toast, ToastContainer } from "react-toastify";
 import { SignedIn } from "@clerk/nextjs";
@@ -34,11 +34,11 @@ type AddBooks = {
 
 
 
-type FeedbackDialogProps = {
-  onAddReview: (addbook:AddBooks) => void;
-};
+// type FeedbackDialogProps = {
+//   onAddReview: (addbook:AddBooks) => void;
+// };
 
-export default function addbooksDialog({ onAddReview }: FeedbackDialogProps) {
+export default function AddbooksDialog() {
   const [bookid, setBookid] = useState<number>(0);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
@@ -86,6 +86,7 @@ export default function addbooksDialog({ onAddReview }: FeedbackDialogProps) {
         <>
         <SignedIn>
         <div className='space-y-2'>
+        <ToastContainer />
             <div className='space-y-2'>
                 <div className='flex justify-between'>
                     <div className='p-2'>

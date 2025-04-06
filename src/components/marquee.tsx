@@ -3,6 +3,15 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
 import { useMemo } from "react";
+import Image from "next/image";
+
+type Review = {
+  name: string;
+  username: string;
+  body: string;
+  img: string;
+  rating: string;
+};
 
 const ReviewCard = ({ img, name, username, body }: { img: string; name: string; username: string; body: string }) => (
   <figure
@@ -13,7 +22,13 @@ const ReviewCard = ({ img, name, username, body }: { img: string; name: string; 
     )}
   >
     <div className="flex flex-row items-center gap-2">
-      <img className="rounded-full" width="32" height="32" alt="" src={img} />
+      <Image
+      src={img}
+      alt="User Avatar"
+      width={40}
+      height={40}
+      className="h-10 w-10 rounded-full border border-gray-950/[.1] bg-gray-950/[.01] p-1 dark:border-gray-50/[.1] dark:bg-gray-50/[.10]"
+      />
       <div className="flex flex-col">
         <figcaption className="text-sm font-medium dark:text-white">{name}</figcaption>
         <p className="text-xs font-medium dark:text-white/40">{username}</p>
@@ -23,7 +38,7 @@ const ReviewCard = ({ img, name, username, body }: { img: string; name: string; 
   </figure>
 );
 
-export default function ReviewMarquee({ reviews }: { reviews: any[] }) {
+export default function ReviewMarquee({ reviews }: { reviews: Review[] }) {
   // Use useMemo to split reviews into 3 equal parts dynamically
   const [firstRow, secondRow, thirdRow] = useMemo(() => {
     const chunkSize = Math.ceil(reviews.length / 3);
