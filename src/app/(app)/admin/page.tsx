@@ -103,7 +103,7 @@ export default function AdminPanel() {
     // api request
 
     try {
-      const response = await fetch("hhttps://readaura-ml-service.onrender.com/admin/add_book", {
+      const response = await fetch("https://readaura-ml-service.onrender.com/admin/add_book", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(bookToAdd),
