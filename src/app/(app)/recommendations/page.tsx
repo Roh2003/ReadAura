@@ -33,7 +33,7 @@ export default function Recommendations() {
   useEffect(() => {
     const fetchPopularBooks = async () => {
       try {
-        const response = await fetch("https://readaura-ml-service.onrender.com/recommend/all_books");
+        const response = await fetch("https://readaura-ml-service.onrender.com/recommend/popularity");
         const data = await response.json();
         console.log(data)
 
