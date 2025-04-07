@@ -13,7 +13,7 @@ export default function Dashboard() {
             <CardDescription>Your reading progress</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-4xl font-bold">12</p>
+            <p className="text-4xl font-bold">0</p>
           </CardContent>
         </Card>
         <Card>
@@ -22,7 +22,7 @@ export default function Dashboard() {
             <CardDescription>Books to read this year</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-4xl font-bold">24 / 50</p>
+            <p className="text-4xl font-bold">0 / 50</p>
           </CardContent>
         </Card>
         <Card>
@@ -31,7 +31,7 @@ export default function Dashboard() {
             <CardDescription>Based on your reading history</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-4xl font-bold">Science Fiction</p>
+            <p className="text-4xl font-bold">None</p>
           </CardContent>
         </Card>
       </div>

@@ -5,6 +5,7 @@ import { Marquee } from "@/components/magicui/marquee";
 import { useMemo } from "react";
 import Image from "next/image";
 
+
 type Review = {
   name: string;
   username: string;
