@@ -24,8 +24,8 @@ import { toast , ToastContainer } from "react-toastify"
 type Book = {
   BOOK_ID: number
   BOOK_TITLE: string
-  BOOK_AURTHOR: string
-  GENERE: string
+  BOOK_AUTHOR: string
+  GENRE: string
   LANGUAGE: string
   A_RATINGS: number
   RATERS: number
@@ -41,8 +41,8 @@ export default function AdminPanel() {
   const [newBook, setNewBook] = useState<Partial<Book>>({
     BOOK_ID: books.length > 0 ? Math.max(...books.map((book) => book.BOOK_ID)) + 1 : 1,
     BOOK_TITLE: "",
-    BOOK_AURTHOR: "",
-    GENERE: "",
+    BOOK_AUTHOR: "",
+    GENRE: "",
     LANGUAGE: "",
     A_RATINGS: 0,
     RATERS: 0,
@@ -73,8 +73,8 @@ export default function AdminPanel() {
   const filteredBooks = books.filter(
     (book) =>
       book.BOOK_TITLE.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      book.BOOK_AURTHOR.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      book.GENERE.toLowerCase().includes(searchQuery.toLowerCase()),
+      book.BOOK_AUTHOR.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      book.GENRE.toLowerCase().includes(searchQuery.toLowerCase()),
   )
 
   // Calculate pagination
@@ -84,15 +84,15 @@ export default function AdminPanel() {
   const currentBooks = filteredBooks.slice(indexOfFirstBook, indexOfLastBook)
 
   const handleAddBook =async () => {
-    if (!newBook.BOOK_TITLE || !newBook.BOOK_AURTHOR) {
+    if (!newBook.BOOK_TITLE || !newBook.BOOK_AUTHOR) {
         toast.error("please fill all necessary details")
     }
 
     const bookToAdd = {
       BOOK_ID: newBook.BOOK_ID || 1,
       BOOK_TITLE: newBook.BOOK_TITLE,
-      BOOK_AURTHOR: newBook.BOOK_AURTHOR,
-      GENERE: newBook.GENERE || "Unknown",
+      BOOK_AUTHOR: newBook.BOOK_AUTHOR,
+      GENRE: newBook.GENRE || "Unknown",
       LANGUAGE: newBook.LANGUAGE || "English",
       A_RATINGS: newBook.A_RATINGS || 0,
       RATERS: newBook.RATERS || 0,
@@ -126,8 +126,8 @@ export default function AdminPanel() {
     setNewBook({
       BOOK_ID: books.length > 0 ? Math.max(...books.map((book) => book.BOOK_ID)) + 1 : 1,
       BOOK_TITLE: "",
-      BOOK_AURTHOR: "",
-      GENERE: "",
+      BOOK_AUTHOR: "",
+      GENRE: "",
       LANGUAGE: "",
       A_RATINGS: 0,
       RATERS: 0,
@@ -214,22 +214,22 @@ export default function AdminPanel() {
                   </div>
     
                   <div className="space-y-2">
-                    <Label htmlFor="BOOK_AURTHOR">Book Author</Label>
+                    <Label htmlFor="BOOK_AUTHOR">Book Author</Label>
                     <Input
-                      id="BOOK_AURTHOR"
-                      name="BOOK_AURTHOR"
+                      id="BOOK_AUTHOR"
+                      name="BOOK_AUTHOR"
                       className="bg-slate-800 border-slate-700"
-                      value={newBook.BOOK_AURTHOR}
+                      value={newBook.BOOK_AUTHOR}
                       onChange={handleInputChange}
                     />
                   </div>
                   
     
                   <div className="space-y-2">
-                    <Label htmlFor="GENERE">GENERE</Label>
-                    <Select onValueChange={(value) => handleSelectChange("GENERE", value)} value={newBook.GENERE}>
+                    <Label htmlFor="GENRE">GENRE</Label>
+                    <Select onValueChange={(value) => handleSelectChange("GENRE", value)} value={newBook.GENRE}>
                       <SelectTrigger className="bg-slate-800 border-slate-700">
-                        <SelectValue placeholder="Select GENERE" />
+                        <SelectValue placeholder="Select GENRE" />
                       </SelectTrigger>
                       <SelectContent className="bg-slate-800 border-slate-700">
                         <SelectItem value="Fiction">Fiction</SelectItem>
@@ -355,8 +355,8 @@ export default function AdminPanel() {
                       </CardHeader>
                       <CardContent className="flex flex-col items-start gap-2">
                         <CardTitle>{book.BOOK_TITLE}</CardTitle>
-                        <CardDescription>{book.BOOK_AURTHOR}</CardDescription>
-                        <CardDescription>{book.GENERE}</CardDescription>
+                        <CardDescription>{book.BOOK_AUTHOR}</CardDescription>
+                        <CardDescription>{book.GENRE}</CardDescription>
                         <CardDescription className="flex items-center gap-1">
                           Rating: {book.A_RATINGS}
                           <Star className="h-3 w-3 fill-yellow-500 text-yellow-500" />
