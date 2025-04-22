@@ -53,7 +53,7 @@ export default function Home() {
       name: "Jenny", 
       username: "@jenny", 
       body: "Amazing experience! ReadAura makes discovering books effortless and fun.", 
-      img: "/chi.jpg", 
+      img: "", 
       rating: "⭐⭐⭐⭐⭐" 
     },
     { 
