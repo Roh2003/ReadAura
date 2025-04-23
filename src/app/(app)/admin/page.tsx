@@ -270,6 +270,7 @@ export default function AdminPanel() {
                       name="A_RATINGS"
                       type="number"
                       min="0"
+                      step="any"
                       className="bg-slate-800 border-slate-700"
                       value={newBook.A_RATINGS}
                       onChange={handleInputChange}

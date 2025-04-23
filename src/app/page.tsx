@@ -53,16 +53,38 @@ export default function Home() {
       name: "Jenny", 
       username: "@jenny", 
       body: "Amazing experience! ReadAura makes discovering books effortless and fun.", 
-      img: "", 
-      rating: "⭐⭐⭐⭐⭐" 
+      img: "/p2.jpg", 
+      rating: "⭐⭐⭐⭐" 
     },
     { 
         name: "Pratish B.", 
         username: "@pratish", 
         body: "The community aspect makes ReadAura amazing! Real people, real recommendations—feels like a book club!", 
         img: "/pra.jpg", 
-        rating: "⭐⭐⭐⭐⭐" 
-      }
+        rating: "⭐⭐⭐" 
+    },
+    {
+      name: "Ananya M.",
+      username: "@ananya_reads",
+      body: "Absolutely love ReadAura! It’s like it knows exactly what I want to read next. Found so many hidden gems!",
+      img: "/p3.jpg",
+      rating: "⭐⭐⭐⭐"
+    },
+    {
+      name: "jacqline D.",
+      username: "@karand_books",
+      body: "The personalized recommendations are seriously impressive. ReadAura makes book hunting fun again!",
+      img: "/p4.jpg",
+      rating: "⭐⭐⭐⭐⭐"
+    },
+    {
+      name: "Meera T.",
+      username: "@meera_tales",
+      body: "ReadAura has transformed how I find books. It’s intuitive, fast, and super accurate. A must for every book lover!",
+      img: "/meera.jpg",
+      rating: "⭐⭐⭐⭐⭐"
+    },
+
   ]);
 
   const addReview = (newReview: Review) => {
