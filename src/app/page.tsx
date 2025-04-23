@@ -81,7 +81,7 @@ export default function Home() {
       name: "Meera T.",
       username: "@meera_tales",
       body: "ReadAura has transformed how I find books. It’s intuitive, fast, and super accurate. A must for every book lover!",
-      img: "/meera.jpg",
+      img: "/p1.png",
       rating: "⭐⭐⭐⭐⭐"
     },
 
